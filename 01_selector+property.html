@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS 선택자, 프로퍼티(속성)</title>
+    <style>
+      /* CSS 주석 */
+      #brand {
+        color: skyblue;
+      }
+      .lead {
+        color: green;
+      }
+      .alert {
+        color: red;
+      }
+      strong {
+        color: pink;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 id="brand">구별을 위한 선택자 id, 1개만 존재하는 걸 권장</h1>
+    <p id="brand">그런데 id 중복 입력도 된다 -> 작성할 때 신경 써주기</p>
+    <p class="lead">재사용을 위한 클래스 예시</p>
+    <h6 class="lead">재사용했따</h6>
+    <p class="alert">경고 경고~</p>
+    <strong>강조된 텍스트</strong>
+  </body>
+</html>
