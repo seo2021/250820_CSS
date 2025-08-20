@@ -18,7 +18,41 @@
       strong {
         color: pink;
       }
+      input {
+        font-size: 24px;
+      }
+      input[type="password"] {
+        font-size: 18px;
+      }
+      a {
+        text-decoration: none;
+      }
+      a[target="_blank"] {
+        text-decoration: underline;
+      }
+      /* 결합자 */
+      .section {
+        border: 1px solid black;
+      }
+      .section .note {
+        color: grey;
+      } /* 소속된 모든 요소 (꼭 바로 소속된게 아니더라도... 해당 선택자에 속하기만 해도...) */
+      .section > .note {
+        background-color: lightyellow;
+      } /* 바로 속한 경우 -> 중간에 감싸는 것이 있다면 적용 안됨 */
+      h3 + p {
+        font-style: italic;
+        font-weight: bold;
+      }
+      h3 ~ p {
+        border-top: 1px dashed black; /* font-style을 뒤집어 씌움 */
+      }
+      h3,
+      p {
+        font-size: 24px;
+      } /*여러 개 태그 적용*/
     </style>
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <h1 id="brand">구별을 위한 선택자 id, 1개만 존재하는 걸 권장</h1>
@@ -27,5 +61,35 @@
     <h6 class="lead">재사용했따</h6>
     <p class="alert">경고 경고~</p>
     <strong>강조된 텍스트</strong>
+    <br />
+    <label>
+      <input type="text" placeholder="아이디" />
+    </label>
+    <label>
+      <input type="password" placeholder="비밀번호" />
+    </label>
+    <p>
+      <a href="https://likelion.net" target="_blank">새 창 링크</a>
+      <a href="https://likelion.net" target="_self">현재 탭 링크</a>
+    </p>
+
+    <!-- 감싸줄 때 쓴다 -->
+    <section class="section">
+      <div class="note">나는 .section의 자식(하위, 바로 직계인 경우) .note</div>
+      <div>
+        <div class="note">
+          나는 .section의 자손(바로 직계가 아닌 경우) .note
+        </div>
+      </div>
+      <h3>제목</h3>
+      <p>이 단락은 h3 바로 다음</p>
+      <p>이 단락은 h3 뒤쪽 모든 형제(~, 같은 요소 소속인 요소들)</p>
+    </section>
+
+    <ul>
+      <li>
+        내부 스타일 시트: &lt;style&gt; 태그를 사용하여 HTML 문서 내에 직접 작성
+      </li>
+    </ul>
   </body>
 </html>
