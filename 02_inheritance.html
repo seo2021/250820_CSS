@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>상속</title>
+    <style>
+      /* 내부 스타일시트 문법 */
+      body {
+        font-size: 16px;
+        color: #333;
+        line-height: 1.6;
+      }
+      /*상속 실습*/
+      .ancestor {
+        color: green;
+        font-size: 18px;
+      }
+      .child {
+        color: blue;
+      }
+      .grandchild {
+        color: red;
+      }
+      .ancestor-box {
+        border: 2px solid orange;
+        padding: 10px;
+      }
+      .sizes {
+        font-size: 8px;
+      }
+      .sizes p {
+        margin: 0.3em 0; /*위아래 좌우*/
+      }
+      .px {
+        font-size: 24px; /*절대 크기*/
+      }
+      .em {
+        font-size: 2em; /* 부모 요소의 폰트 크기의 2배 */
+      }
+      .rem {
+        font-size: 1.5rem; /* root 요소의 폰트 크기의 1.5배 */
+      }
+      .percent {
+        font-size: 150%; /* 부모 요소의 폰트 크기의 150% */
+      }
+      /*em vs rem*/
+      .parent {
+        font-size: 20px;
+        padding: 8px;
+      }
+      .child-em {
+        font-size: 2em; /* 부모 요소의 폰트 크기의 2배 */
+        padding: 2em;
+      }
+      .child-rem {
+        font-size: 2rem; /* root 요소의 폰트 크기의 2배 */
+        padding: 2rem;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- div: 구분된 블록을 하나 만들어줌 -->
+    <!-- 상속 -->
+    상속상속
+    <div>상속</div>
+    <div>상속</div>
+    <p>위아래 여백이 있음</p>
+    <p>위아래 여백이 있음</p>
+    <div class="ancestor">
+      조상 div (.ancestor)
+      <div class="child">
+        자식 div (.child)
+        <div class="grandchild">손자 div (.grandchild)</div>
+      </div>
+    </div>
+    <br />
+    <div class="ancestor-box">
+      border 속성은 상속되지 않음
+      <div class="child-box">자식 div엔 border 없음</div>
+    </div>
+
+    <!-- 사이즈 -->
+    <div class="sizes">
+      <p class="px">px 절대크기</p>
+      <p class="em">em 상대크기</p>
+      <p class="rem">rem html기준</p>
+      <p class="percent">% 부모대비</p>
+    </div>
+
+    <div>
+      <h2>em과 rem</h2>
+      <div class="parent">
+        부모(.parent) font-size: 20px
+        <p class="child-em">2em - 40px</p>
+        <p class="child-rem">2rem - 32px</p>
+      </div>
+    </div>
+  </body>
+</html>
